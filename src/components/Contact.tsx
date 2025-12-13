@@ -1,26 +1,47 @@
 import { useState } from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
 
+const FORMSPREE_ID = 'xgvgdqdj';
+
 export default function Contact() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitStatus('idle');
     
-    // Here you would integrate with your preferred form service
-    // For now, we'll just open the mail client
-    const mailtoLink = `mailto:juancamiloamorocho@hotmail.com?subject=Contact from Portfolio - ${formData.name}&body=${encodeURIComponent(formData.message)}%0A%0AFrom: ${formData.email}`;
-    window.open(mailtoLink, '_blank');
-    
-    setIsSubmitting(false);
-    setFormData({ name: '', email: '', message: '' });
+    try {
+      const response = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        }),
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -103,7 +124,7 @@ export default function Contact() {
               {/* Submit Button */}
               <button
                 type="submit"
-                disabled={isSubmitting}
+                disabled={isSubmitting || submitStatus === 'success'}
                 className="btn-primary w-full flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? (
@@ -120,6 +141,34 @@ export default function Contact() {
                   </>
                 )}
               </button>
+
+              {/* Success Message */}
+              {submitStatus === 'success' && (
+                <div className="mt-4 p-4 bg-emerald-500/20 border border-emerald-500/30 rounded-lg flex items-center space-x-3">
+                  <svg className="w-6 h-6 text-emerald-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <p className="text-emerald-300 text-sm">
+                    {language === 'es' 
+                      ? '¡Mensaje enviado! Te responderé pronto.' 
+                      : 'Message sent! I will reply soon.'}
+                  </p>
+                </div>
+              )}
+
+              {/* Error Message */}
+              {submitStatus === 'error' && (
+                <div className="mt-4 p-4 bg-red-500/20 border border-red-500/30 rounded-lg flex items-center space-x-3">
+                  <svg className="w-6 h-6 text-red-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <p className="text-red-300 text-sm">
+                    {language === 'es' 
+                      ? 'Error al enviar. Intenta de nuevo o contáctame directamente.' 
+                      : 'Error sending. Try again or contact me directly.'}
+                  </p>
+                </div>
+              )}
             </form>
           </div>
 
