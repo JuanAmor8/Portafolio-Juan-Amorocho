@@ -1,0 +1,57 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Portafolio de Juan Amorocho - Ingeniero de Software & Desarrollador Full Stack" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="author" content="Juan Amorocho" />
+    <meta name="keywords" content="desarrollador, software, full stack, react, python, java, portafolio, ingeniero de sistemas" />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/og-image.jpg" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+  </head>
+  <body class="grid-background min-h-screen">
+    <!-- Floating particles background -->
+    <div class="floating-particles" aria-hidden="true">
+      {Array.from({ length: 20 }).map((_, i) => (
+        <div 
+          class="particle" 
+          style={`left: ${Math.random() * 100}%; animation-delay: ${Math.random() * 20}s; animation-duration: ${15 + Math.random() * 10}s;`}
+        />
+      ))}
+    </div>
+    
+    <!-- Radial glow effect -->
+    <div class="fixed inset-0 pointer-events-none" aria-hidden="true">
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-radial-glow opacity-50"></div>
+      <div class="absolute bottom-0 right-0 w-[600px] h-[600px] bg-radial-glow opacity-30"></div>
+    </div>
+    
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  @import '../styles/global.css';
+</style>
+

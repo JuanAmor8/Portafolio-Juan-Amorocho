@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-dark-950 text-dark-100 antialiased;
+    font-family: 'Sora', sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Sora', sans-serif;
+  }
+
+  ::selection {
+    @apply bg-accent-cyan/30 text-white;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-dark-900;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary-600 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary-500;
+  }
+}
+
+@layer components {
+  .text-gradient {
+    @apply bg-gradient-to-r from-accent-cyan via-primary-400 to-accent-blue bg-clip-text text-transparent;
+  }
+
+  .glow-text {
+    text-shadow: 0 0 10px rgba(0, 245, 255, 0.5), 0 0 20px rgba(0, 245, 255, 0.3), 0 0 30px rgba(0, 245, 255, 0.2);
+  }
+
+  .glow-box {
+    box-shadow: 0 0 15px rgba(0, 245, 255, 0.3), 0 0 30px rgba(0, 245, 255, 0.1);
+  }
+
+  .glow-border {
+    @apply border border-accent-cyan/30;
+    box-shadow: 0 0 15px rgba(0, 245, 255, 0.1), inset 0 0 15px rgba(0, 245, 255, 0.05);
+  }
+
+  .card-futuristic {
+    @apply relative bg-dark-900/50 backdrop-blur-sm rounded-xl glow-border overflow-hidden;
+  }
+
+  .card-futuristic::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-br from-accent-cyan/5 to-transparent pointer-events-none;
+  }
+
+  .btn-primary {
+    @apply relative px-6 py-3 font-semibold text-dark-950 bg-gradient-to-r from-accent-cyan to-primary-400 rounded-lg overflow-hidden transition-all duration-300;
+  }
+
+  .btn-primary:hover {
+    @apply shadow-lg;
+    box-shadow: 0 0 20px rgba(0, 245, 255, 0.5), 0 0 40px rgba(0, 245, 255, 0.3);
+    transform: translateY(-2px);
+  }
+
+  .btn-outline {
+    @apply relative px-6 py-3 font-semibold text-accent-cyan border-2 border-accent-cyan/50 rounded-lg overflow-hidden transition-all duration-300;
+  }
+
+  .btn-outline:hover {
+    @apply bg-accent-cyan/10 border-accent-cyan;
+    box-shadow: 0 0 15px rgba(0, 245, 255, 0.3);
+  }
+
+  .section-title {
+    @apply text-4xl md:text-5xl font-bold text-gradient mb-4;
+  }
+
+  .section-subtitle {
+    @apply text-lg text-dark-400 max-w-2xl mx-auto;
+  }
+
+  .grid-background {
+    background-image: 
+      linear-gradient(to right, rgba(0, 245, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 245, 255, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .floating-particles {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+  }
+
+  .particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: rgba(0, 245, 255, 0.6);
+    border-radius: 50%;
+    animation: float-particle 20s linear infinite;
+  }
+
+  @keyframes float-particle {
+    0% {
+      transform: translateY(100vh) rotate(0deg);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-100vh) rotate(720deg);
+      opacity: 0;
+    }
+  }
+
+  /* Morphing border animation for profile */
+  .morph-border {
+    position: relative;
+  }
+  
+  .morph-border::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    background: conic-gradient(
+      from 0deg,
+      #00f5ff,
+      #06b6d4,
+      #0080ff,
+      #8b5cf6,
+      #00f5ff
+    );
+    animation: rotate-border 4s linear infinite;
+    z-index: -1;
+  }
+  
+  .morph-border::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    background: conic-gradient(
+      from 180deg,
+      #00f5ff,
+      #06b6d4,
+      #0080ff,
+      #8b5cf6,
+      #00f5ff
+    );
+    animation: rotate-border 4s linear infinite reverse;
+    opacity: 0.5;
+    z-index: -1;
+    filter: blur(8px);
+  }
+
+  @keyframes rotate-border {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .morph-glow {
+    animation: morph-glow-pulse 3s ease-in-out infinite;
+  }
+
+  @keyframes morph-glow-pulse {
+    0%, 100% {
+      filter: blur(15px);
+      opacity: 0.6;
+    }
+    50% {
+      filter: blur(25px);
+      opacity: 0.8;
+    }
+  }
+
+  .nav-link {
+    @apply relative text-dark-300 hover:text-accent-cyan transition-colors duration-300 font-medium;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute -bottom-1 left-0 w-0 h-0.5 bg-accent-cyan transition-all duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  .nav-link.active {
+    @apply text-accent-cyan;
+  }
+
+  .nav-link.active::after {
+    @apply w-full;
+  }
+}
+
+@layer utilities {
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+  .animation-delay-800 {
+    animation-delay: 800ms;
+  }
+  .animation-delay-1000 {
+    animation-delay: 1000ms;
+  }
+}
