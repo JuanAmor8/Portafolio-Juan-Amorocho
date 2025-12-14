@@ -20,7 +20,7 @@ export const translations = {
     },
     about: {
       title: 'Sobre mí',
-      description: 'Soy un apasionado desarrollador de software con experiencia en desarrollo web full-stack. Actualmente cursando el 8° semestre de Ingeniería de Sistemas/Software, combinando conocimientos académicos con experiencia práctica en proyectos reales.',
+      description: 'Soy un apasionado desarrollador de software con experiencia en desarrollo web full-stack. Actualmente cursando el 8° semestre de Ingeniería de Sistemas/Software, combinando conocimientos académicos con experiencia práctica en proyectos reales. Soy bilingüe con nivel de inglés B2+.',
       experience: 'He trabajado de forma independiente en diversos proyectos, incluyendo sostenimiento y mantenimiento de páginas web, lo que me ha permitido desarrollar habilidades técnicas sólidas y capacidad de resolver problemas de manera autónoma.',
       passion: 'Mi pasión por la tecnología me impulsa a estar constantemente aprendiendo y explorando nuevas herramientas y frameworks para crear soluciones innovadoras y eficientes.',
     },
@@ -84,7 +84,7 @@ export const translations = {
     },
     about: {
       title: 'About me',
-      description: "I'm a passionate software developer with experience in full-stack web development. Currently in my 8th semester of Systems/Software Engineering, combining academic knowledge with practical experience in real projects.",
+      description: "I'm a passionate software developer with experience in full-stack web development. Currently in my 8th semester of Systems/Software Engineering, combining academic knowledge with practical experience in real projects. Bilingual with B2+ English proficiency.",
       experience: 'I have worked independently on various projects, including website maintenance and support, which has allowed me to develop solid technical skills and the ability to solve problems autonomously.',
       passion: 'My passion for technology drives me to constantly learn and explore new tools and frameworks to create innovative and efficient solutions.',
     },

@@ -36,6 +36,8 @@ export default function About() {
                   <p className="pl-4"><span className="text-primary-400">role</span>: <span className="text-green-400">"Full Stack Developer"</span>,</p>
                   <p className="pl-4"><span className="text-primary-400">semester</span>: <span className="text-orange-400">8</span>,</p>
                   <p className="pl-4"><span className="text-primary-400">location</span>: <span className="text-green-400">"Colombia"</span>,</p>
+                  <p className="pl-4"><span className="text-primary-400">bilingual</span>: <span className="text-accent-cyan">true</span>,</p>
+                  <p className="pl-4"><span className="text-primary-400">english</span>: <span className="text-green-400">"B2+"</span>,</p>
                   <p className="pl-4"><span className="text-primary-400">available</span>: <span className="text-accent-cyan">true</span>,</p>
                   <p className="pl-4"><span className="text-primary-400">passion</span>: <span className="text-green-400">"Building digital solutions"</span></p>
                   <p>{'}'}</p>
