@@ -1,4 +1,5 @@
 import { LanguageProvider } from '../i18n/LanguageContext';
+import SmoothScroll from './SmoothScroll';
 import Navbar from './Navbar';
 import Hero from './Hero';
 import Projects from './Projects';
@@ -11,18 +12,20 @@ import Footer from './Footer';
 export default function App() {
   return (
     <LanguageProvider>
-      <div className="relative z-10">
-        <Navbar />
-        <main>
-          <Hero />
-          <Projects />
-          <Skills />
-          <Experience />
-          <About />
-          <Contact />
-        </main>
-        <Footer />
-      </div>
+      <SmoothScroll>
+        <div className="relative z-10">
+          <Navbar />
+          <main>
+            <Hero />
+            <Projects />
+            <Skills />
+            <Experience />
+            <About />
+            <Contact />
+          </main>
+          <Footer />
+        </div>
+      </SmoothScroll>
     </LanguageProvider>
   );
 }
