@@ -4,7 +4,7 @@ import { useLanguage } from '../i18n/LanguageContext';
 const FORMSPREE_ID = 'xgvgdqdj';
 
 export default function Contact() {
-  const { t, language } = useLanguage();
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -83,7 +83,7 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 bg-dark-800/50 border border-dark-700 rounded-lg text-white placeholder-dark-500 focus:border-accent-cyan focus:ring-1 focus:ring-accent-cyan/50 transition-colors outline-none"
-                  placeholder="John Doe"
+                  placeholder={t.contact.namePlaceholder}
                 />
               </div>
 
@@ -100,7 +100,7 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 bg-dark-800/50 border border-dark-700 rounded-lg text-white placeholder-dark-500 focus:border-accent-cyan focus:ring-1 focus:ring-accent-cyan/50 transition-colors outline-none"
-                  placeholder="john@example.com"
+                  placeholder={t.contact.emailPlaceholder}
                 />
               </div>
 
@@ -117,7 +117,7 @@ export default function Contact() {
                   required
                   rows={5}
                   className="w-full px-4 py-3 bg-dark-800/50 border border-dark-700 rounded-lg text-white placeholder-dark-500 focus:border-accent-cyan focus:ring-1 focus:ring-accent-cyan/50 transition-colors outline-none resize-none"
-                  placeholder="Your message..."
+                  placeholder={t.contact.messagePlaceholder}
                 />
               </div>
 
@@ -149,9 +149,7 @@ export default function Contact() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                   <p className="text-emerald-300 text-sm">
-                    {language === 'es' 
-                      ? '¡Mensaje enviado! Te responderé pronto.' 
-                      : 'Message sent! I will reply soon.'}
+                    {t.contact.successMessage}
                   </p>
                 </div>
               )}
@@ -163,9 +161,7 @@ export default function Contact() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                   <p className="text-red-300 text-sm">
-                    {language === 'es' 
-                      ? 'Error al enviar. Intenta de nuevo o contáctame directamente.' 
-                      : 'Error sending. Try again or contact me directly.'}
+                    {t.contact.errorMessage}
                   </p>
                 </div>
               )}
