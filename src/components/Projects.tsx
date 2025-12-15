@@ -73,7 +73,7 @@ const projects = [
       es: 'Sistema de votación electrónica distribuido con arquitectura cliente-servidor usando ZeroC ICE. Implementa transmisión confiable, prevención de duplicados con UUID y almacenamiento transitorio.',
       en: 'Distributed electronic voting system with client-server architecture using ZeroC ICE. Implements reliable transmission, duplicate prevention with UUID and transient storage.',
     },
-    image: '/projects/votacion.jpg',
+    image: '/projects/sistemadevotacion.JPG',
     technologies: ['Java', 'ZeroC ICE', 'Gradle', 'CSV', 'Distributed Systems'],
     github: 'https://github.com/tomasquin2003/Software_IV_Final_Project',
     demo: null,
@@ -348,16 +348,14 @@ export default function Projects() {
 
           {/* 5. Sistema de Votación */}
           <article className="group relative overflow-hidden rounded-2xl bg-dark-900/50 border border-dark-700/50 hover:border-rose-500/30 transition-all duration-500 md:col-span-2">
-            {/* Visual Header */}
-            <div className="relative h-52 overflow-hidden bg-gradient-to-br from-rose-600/20 to-pink-600/20">
-              <div className="absolute inset-0 grid-background opacity-30" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-rose-500 to-pink-600 flex items-center justify-center shadow-2xl shadow-rose-500/30 group-hover:scale-110 transition-transform duration-500">
-                  <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-              </div>
+            {/* Visual Header with Image */}
+            <div className="relative h-52 overflow-hidden">
+              <img 
+                src="/projects/sistemadevotacion.JPG" 
+                alt="Sistema de Votación Preview"
+                className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/40 to-transparent" />
             </div>
 
             {/* Content */}
