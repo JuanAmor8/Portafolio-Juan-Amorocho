@@ -50,16 +50,16 @@ const projects = [
     id: 6,
     title: 'SkillUp',
     description: {
-      es: 'Plataforma de aprendizaje y desarrollo de habilidades técnicas. Sistema interactivo para mejorar competencias profesionales.',
-      en: 'Learning platform for technical skill development. Interactive system for improving professional competencies.',
+      es: 'Plataforma de freelancers con interfaz minimalista para el intercambio de servicios. Conecta talento y oportunidades sin barreras de manera fluida y efectiva.',
+      en: 'Freelancer platform with minimalist interface for service exchange. Connects talent and opportunities seamlessly and effectively.',
     },
     image: '/projects/skillup.jpg',
     technologies: ['React', 'Node.js', 'MongoDB', 'Express'],
     github: 'https://github.com/JuanAmor8/SkillUp',
     demo: null,
-    featured: false,
-    color: 'from-sky-500 to-indigo-600',
-    icon: 'education',
+    featured: true,
+    color: 'from-sky-500 to-blue-600',
+    icon: 'freelance',
   },
   {
     id: 3,
@@ -113,7 +113,7 @@ export default function Projects() {
         </div>
 
         {/* Featured Projects */}
-        <div className="grid lg:grid-cols-3 gap-6 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {/* TriviaTime */}
           <article className="group relative overflow-hidden rounded-2xl bg-dark-900/50 border border-dark-700/50 hover:border-violet-500/30 transition-all duration-500">
             {/* Visual Header */}
@@ -304,6 +304,73 @@ export default function Projects() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center space-x-2 text-sm text-amber-400 hover:text-amber-300 transition-colors"
+              >
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
+                </svg>
+                <span>{language === 'es' ? 'Ver Código' : 'View Code'}</span>
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          {/* SkillUp */}
+          <article className="group relative overflow-hidden rounded-2xl bg-dark-900/50 border border-dark-700/50 hover:border-sky-500/30 transition-all duration-500">
+            {/* Visual Header */}
+            <div className="relative h-48 overflow-hidden bg-gradient-to-br from-sky-600/20 to-blue-600/20">
+              <div className="absolute inset-0 grid-background opacity-30" />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-sky-500 to-blue-600 flex items-center justify-center shadow-2xl shadow-sky-500/30 group-hover:scale-110 transition-transform duration-500">
+                  <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                </div>
+              </div>
+              <div className="absolute top-4 left-4">
+                <span className="px-3 py-1 text-xs font-semibold bg-sky-500/20 text-sky-300 rounded-full border border-sky-500/30">
+                  💼 Freelance
+                </span>
+              </div>
+            </div>
+
+            {/* Content */}
+            <div className="p-6">
+              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-sky-400 transition-colors">
+                SkillUp
+              </h3>
+              <p className="text-dark-400 text-sm mb-4 line-clamp-2">
+                {projects[3].description[language]}
+              </p>
+              
+              {/* Features mini */}
+              <div className="flex flex-wrap gap-2 mb-4">
+                {['Marketplace', 'API REST', 'Auth'].map((f, i) => (
+                  <span key={i} className="text-xs text-sky-400 flex items-center gap-1">
+                    <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    {f}
+                  </span>
+                ))}
+              </div>
+
+              {/* Technologies */}
+              <div className="flex flex-wrap gap-2 mb-4">
+                {projects[3].technologies.slice(0, 4).map((tech) => (
+                  <span key={tech} className="px-2 py-1 text-xs font-mono bg-sky-500/10 border border-sky-500/20 rounded text-sky-300">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+
+              {/* Action */}
+              <a 
+                href={projects[3].github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center space-x-2 text-sm text-sky-400 hover:text-sky-300 transition-colors"
               >
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                   <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
