@@ -25,7 +25,7 @@ const projects = [
       es: 'Sistema completo de firma y verificación digital de archivos usando criptografía RSA con hashing SHA-256. Arquitectura cliente-servidor con ZeroC Ice.',
       en: 'Complete digital file signing and verification system using RSA cryptography with SHA-256 hashing. Client-server architecture with ZeroC Ice.',
     },
-    image: '/projects/signature.jpg',
+    image: '/projects/RSA.JPG',
     technologies: ['Java', 'RSA', 'SHA-256', 'ZeroC Ice', 'BouncyCastle'],
     github: 'https://github.com/Cibersecurity-Org/sigCheckImplementation',
     demo: null,
