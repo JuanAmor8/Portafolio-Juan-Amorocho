@@ -47,6 +47,21 @@ const projects = [
     icon: 'ecommerce',
   },
   {
+    id: 6,
+    title: 'SkillUp',
+    description: {
+      es: 'Plataforma de aprendizaje y desarrollo de habilidades técnicas. Sistema interactivo para mejorar competencias profesionales.',
+      en: 'Learning platform for technical skill development. Interactive system for improving professional competencies.',
+    },
+    image: '/projects/skillup.jpg',
+    technologies: ['React', 'Node.js', 'MongoDB', 'Express'],
+    github: 'https://github.com/JuanAmor8/SkillUp',
+    demo: null,
+    featured: false,
+    color: 'from-sky-500 to-indigo-600',
+    icon: 'education',
+  },
+  {
     id: 3,
     title: 'T1-APO2',
     description: {
