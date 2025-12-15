@@ -113,15 +113,15 @@ export default function Projects() {
         </div>
 
         {/* Featured Projects */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid md:grid-cols-2 gap-8 mb-12">
           {/* TriviaTime */}
           <article className="group relative overflow-hidden rounded-2xl bg-dark-900/50 border border-dark-700/50 hover:border-violet-500/30 transition-all duration-500">
             {/* Visual Header */}
-            <div className="relative h-48 overflow-hidden bg-gradient-to-br from-violet-600/20 to-purple-600/20">
+            <div className="relative h-56 overflow-hidden bg-gradient-to-br from-violet-600/20 to-purple-600/20">
               <div className="absolute inset-0 grid-background opacity-30" />
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center shadow-2xl shadow-violet-500/30 group-hover:scale-110 transition-transform duration-500">
-                  <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center shadow-2xl shadow-violet-500/30 group-hover:scale-110 transition-transform duration-500">
+                  <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                   </svg>
                 </div>
@@ -129,11 +129,11 @@ export default function Projects() {
             </div>
 
             {/* Content */}
-            <div className="p-6">
-              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-violet-400 transition-colors">
+            <div className="p-8">
+              <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-violet-400 transition-colors">
                 TriviaTime
               </h3>
-              <p className="text-dark-400 text-sm mb-4 line-clamp-2">
+              <p className="text-dark-400 text-base mb-4 line-clamp-3">
                 {projects[0].description[language]}
               </p>
               
@@ -179,11 +179,11 @@ export default function Projects() {
           {/* RSA Digital Signature */}
           <article className="group relative overflow-hidden rounded-2xl bg-dark-900/50 border border-dark-700/50 hover:border-emerald-500/30 transition-all duration-500">
             {/* Visual Header */}
-            <div className="relative h-48 overflow-hidden bg-gradient-to-br from-emerald-600/20 to-teal-600/20">
+            <div className="relative h-56 overflow-hidden bg-gradient-to-br from-emerald-600/20 to-teal-600/20">
               <div className="absolute inset-0 grid-background opacity-30" />
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center shadow-2xl shadow-emerald-500/30 group-hover:scale-110 transition-transform duration-500">
-                  <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center shadow-2xl shadow-emerald-500/30 group-hover:scale-110 transition-transform duration-500">
+                  <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                   </svg>
                 </div>
@@ -191,11 +191,11 @@ export default function Projects() {
             </div>
 
             {/* Content */}
-            <div className="p-6">
-              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-emerald-400 transition-colors">
+            <div className="p-8">
+              <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-emerald-400 transition-colors">
                 RSA Digital Signature
               </h3>
-              <p className="text-dark-400 text-sm mb-4 line-clamp-2">
+              <p className="text-dark-400 text-base mb-4 line-clamp-3">
                 {projects[1].description[language]}
               </p>
               
@@ -241,7 +241,7 @@ export default function Projects() {
           {/* NicheStore */}
           <article className="group relative overflow-hidden rounded-2xl bg-dark-900/50 border border-dark-700/50 hover:border-amber-500/30 transition-all duration-500">
             {/* Visual Header with Image */}
-            <div className="relative h-48 overflow-hidden">
+            <div className="relative h-56 overflow-hidden">
               {/* Background Image */}
               <img 
                 src="/projects/nichestore.JPG" 
@@ -253,11 +253,11 @@ export default function Projects() {
             </div>
 
             {/* Content */}
-            <div className="p-6">
-              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-amber-400 transition-colors">
+            <div className="p-8">
+              <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-amber-400 transition-colors">
                 NicheStore
               </h3>
-              <p className="text-dark-400 text-sm mb-4 line-clamp-2">
+              <p className="text-dark-400 text-base mb-4 line-clamp-3">
                 {projects[2].description[language]}
               </p>
               
@@ -303,7 +303,7 @@ export default function Projects() {
           {/* SkillUp */}
           <article className="group relative overflow-hidden rounded-2xl bg-dark-900/50 border border-dark-700/50 hover:border-sky-500/30 transition-all duration-500">
             {/* Visual Header with Image */}
-            <div className="relative h-48 overflow-hidden">
+            <div className="relative h-56 overflow-hidden">
               {/* Background Image */}
               <img 
                 src="/projects/skillup.JPG" 
@@ -315,11 +315,11 @@ export default function Projects() {
             </div>
 
             {/* Content */}
-            <div className="p-6">
-              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-sky-400 transition-colors">
+            <div className="p-8">
+              <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-sky-400 transition-colors">
                 SkillUp
               </h3>
-              <p className="text-dark-400 text-sm mb-4 line-clamp-2">
+              <p className="text-dark-400 text-base mb-4 line-clamp-3">
                 {projects[3].description[language]}
               </p>
               
