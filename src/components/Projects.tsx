@@ -54,7 +54,7 @@ const projects = [
       en: 'Freelancer platform with minimalist interface for service exchange. Connects talent and opportunities seamlessly and effectively.',
     },
     image: '/projects/skillup.jpg',
-    technologies: ['React', 'Node.js', 'MongoDB', 'Express'],
+    technologies: ['Python', 'Django', 'Django Channels', 'HTMX', 'Bootstrap', 'SQLite'],
     github: 'https://github.com/JuanAmor8/SkillUp',
     demo: null,
     featured: true,
@@ -126,11 +126,6 @@ export default function Projects() {
                   </svg>
                 </div>
               </div>
-              <div className="absolute top-4 left-4">
-                <span className="px-3 py-1 text-xs font-semibold bg-violet-500/20 text-violet-300 rounded-full border border-violet-500/30">
-                  ⭐ {language === 'es' ? 'Destacado' : 'Featured'}
-                </span>
-              </div>
             </div>
 
             {/* Content */}
@@ -192,11 +187,6 @@ export default function Projects() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                   </svg>
                 </div>
-              </div>
-              <div className="absolute top-4 left-4">
-                <span className="px-3 py-1 text-xs font-semibold bg-emerald-500/20 text-emerald-300 rounded-full border border-emerald-500/30">
-                  🔐 {language === 'es' ? 'Ciberseguridad' : 'Cybersecurity'}
-                </span>
               </div>
             </div>
 
@@ -260,12 +250,6 @@ export default function Projects() {
               />
               {/* Overlay gradient */}
               <div className="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/40 to-transparent" />
-              {/* Badge */}
-              <div className="absolute top-4 left-4 z-10">
-                <span className="px-3 py-1 text-xs font-semibold bg-amber-500/90 text-white rounded-full border border-amber-400/50 shadow-lg backdrop-blur-sm">
-                  🛒 E-commerce
-                </span>
-              </div>
             </div>
 
             {/* Content */}
@@ -328,12 +312,6 @@ export default function Projects() {
               />
               {/* Overlay gradient */}
               <div className="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/40 to-transparent" />
-              {/* Badge */}
-              <div className="absolute top-4 left-4 z-10">
-                <span className="px-3 py-1 text-xs font-semibold bg-sky-500/90 text-white rounded-full border border-sky-400/50 shadow-lg backdrop-blur-sm">
-                  💼 Freelance
-                </span>
-              </div>
             </div>
 
             {/* Content */}
@@ -347,7 +325,7 @@ export default function Projects() {
               
               {/* Features mini */}
               <div className="flex flex-wrap gap-2 mb-4">
-                {['Marketplace', 'API REST', 'Auth'].map((f, i) => (
+                {['WebSockets', 'Real-time', 'HTMX'].map((f, i) => (
                   <span key={i} className="text-xs text-sky-400 flex items-center gap-1">
                     <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
