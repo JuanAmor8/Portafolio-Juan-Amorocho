@@ -57,7 +57,7 @@ const projects = [
       es: 'Aplicación web de trivias interactiva con sistema de rankings, sesiones de juego, panel de administración y múltiples categorías. Incluye integración con OpenTDB API.',
       en: 'Interactive trivia web application with ranking system, game sessions, admin panel and multiple categories. Includes OpenTDB API integration.',
     },
-    image: '/projects/triviatime.jpg',
+    image: '/projects/triviatime.JPG',
     technologies: ['Next.js', 'TypeScript', 'Zustand', 'Jest', 'Playwright'],
     github: 'https://github.com/ICESI-CI3/nextjs-vama',
     demo: null,
@@ -302,16 +302,14 @@ export default function Projects() {
 
           {/* 4. TriviaTime */}
           <article className="group relative overflow-hidden rounded-2xl bg-dark-900/50 border border-dark-700/50 hover:border-violet-500/30 transition-all duration-500">
-            {/* Visual Header */}
-            <div className="relative h-52 overflow-hidden bg-gradient-to-br from-violet-600/20 to-purple-600/20">
-              <div className="absolute inset-0 grid-background opacity-30" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center shadow-2xl shadow-violet-500/30 group-hover:scale-110 transition-transform duration-500">
-                  <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                  </svg>
-                </div>
-              </div>
+            {/* Visual Header with Image */}
+            <div className="relative h-52 overflow-hidden">
+              <img 
+                src="/projects/triviatime.JPG" 
+                alt="TriviaTime Preview"
+                className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/40 to-transparent" />
             </div>
 
             {/* Content */}
